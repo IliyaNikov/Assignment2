@@ -1,0 +1,51 @@
+﻿@page "/EditAdult/{id:int}"
+@using BlazorClientFinal.Data
+@using Models
+
+@inject IAdultData AdultData
+@inject NavigationManager NavigationManager
+
+<h3>EditAdult @adultToEdit.FirstName with Id: @Id</h3>
+
+<EditForm Model="@adultToEdit" OnValidSubmit="@Edit">
+    <DataAnnotationsValidator/> <ValidationSummary/>
+        <div class="form-group"> First Name:<br/> <InputText @bind-Value="adultToEdit.FirstName"/> </div>
+        <div class="form-group"> Last Name:<br/> <InputText @bind-Value="adultToEdit.LastName"/></div>
+        @*<div class="form-group"> User Id:<br/> <InputNumber @bind-Value="newAdultItem.Age"/> </div>*@
+        <div class="form-group"> Height:<br/> <InputNumber @bind-Value="adultToEdit.Height"/></div>
+        <div class="form-group"> Weight:<br/> <InputNumber @bind-Value="adultToEdit.Weight"/></div>
+        <div class="form-group"> Sex:<br/> <InputText @bind-Value="adultToEdit.Sex"/></div>
+        <div class="form-group"> Hair Color:<br/> <InputText @bind-Value="adultToEdit.HairColor"/></div>
+        <div class="form-group"> Eye Color:<br/> <InputText @bind-Value="adultToEdit.EyeColor"/></div>
+        <div class="form-group"> Job title:<br/> <InputText @bind-Value="editJob.JobTitle"/></div>
+        <div class="form-group"> Salary:<br/> <InputNumber @bind-Value="editJob.Salary"/></div>
+        <p class="actions">
+            <button class="btn btn-outline-dark" type="submit">Edit</button>
+        </p>
+</EditForm>
+
+@code {
+    private Adult adultToEdit;
+    private Job editJob = new Job();
+    [Parameter]
+    public int Id { get; set; }
+
+    /*protected Task OnInitialized()
+    {
+        adultToEdit = AdultData.GetAdultByIdAsync(Id);
+        editJob = adultToEdit.JobTitle;
+    }*/
+
+    private void Edit()
+    {
+        adultToEdit.JobTitle = new Job()
+        {
+            JobTitle = editJob.JobTitle,
+            Salary = editJob.Salary
+        };
+        
+        AdultData.EditAdultAsync(adultToEdit);
+        NavigationManager.NavigateTo("/AdultList");
+    }
+
+}

@@ -1,0 +1,6 @@
+C:\Users\iliya\RiderProjects\Assignment 2\BlazorClient\obj\Debug\net5.0\BlazorClient.csprojAssemblyReference.cache
+C:\Users\iliya\RiderProjects\Assignment 2\BlazorClient\obj\Debug\net5.0\BlazorClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iliya\RiderProjects\Assignment 2\BlazorClient\obj\Debug\net5.0\BlazorClient.AssemblyInfoInputs.cache
+C:\Users\iliya\RiderProjects\Assignment 2\BlazorClient\obj\Debug\net5.0\BlazorClient.AssemblyInfo.cs
+C:\Users\iliya\RiderProjects\Assignment 2\BlazorClient\obj\Debug\net5.0\BlazorClient.csproj.CoreCompileInputs.cache
+C:\Users\iliya\RiderProjects\Assignment 2\BlazorClient\obj\Debug\net5.0\BlazorClient.MvcApplicationPartsAssemblyInfo.cache
