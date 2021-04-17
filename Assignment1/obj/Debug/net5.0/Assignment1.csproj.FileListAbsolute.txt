@@ -207,7 +207,6 @@ C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDecl
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\AddAdult.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\AdultList.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\RazorDeclaration\Shared\LoginDisplay.razor.g.cs
@@ -224,7 +223,6 @@ C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\App
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Pages\AddAdult.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Pages\AdultList.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment1\obj\Debug\net5.0\Razor\Shared\LoginDisplay.razor.g.cs

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using WebAPI2.Models;
+using Assignment2WebAPI.Models;
 
-namespace WebAPI2.Data
+namespace Assignment2WebAPI.Data
 {
     public interface IUserService
     {

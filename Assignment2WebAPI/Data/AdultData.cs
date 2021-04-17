@@ -3,10 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
-using WebAPI2.Models;
+using Assignment2WebAPI.Models;
 
-namespace WebAPI2.Data
+namespace Assignment2WebAPI.Data
 {
     public class AdultData : IAdultData
     {

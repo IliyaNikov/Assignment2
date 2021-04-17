@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPI2.Models;
+using Assignment2WebAPI.Models;
 
-namespace WebAPI2.Data
+namespace Assignment2WebAPI.Data
 {
     public class UserService : IUserService
     {
@@ -17,7 +17,8 @@ namespace WebAPI2.Data
             users.Add(new User
             {
                 username = "Troels",
-                password = "1234"
+                password = "1234",
+                SecurityLevel = "1"
             });
         }
         public async Task<User> ValidateUserAsync(string username, string password)

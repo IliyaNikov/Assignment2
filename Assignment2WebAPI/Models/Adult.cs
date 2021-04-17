@@ -1,6 +1,6 @@
 using System;
 
-namespace WebAPI2.Models
+namespace Assignment2WebAPI.Models
 {
     public class Adult : Person
     {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Assignment2WebAPI.Data;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI2.Data;
-using WebAPI2.Models;
+using Assignment2WebAPI.Models;
 
-namespace WebAPI2.Controllers
+namespace Assignment2WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -15,8 +15,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using WebAPI2.Data;
-using WebAPI2.Models;
 
 namespace WebAPI2
 {
@@ -37,8 +35,7 @@ namespace WebAPI2
 
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebAPI2", Version = "v1"}); });
-            services.AddSingleton<IAdultData, AdultData>();
-            services.AddScoped<IUserService, UserService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,8 +51,8 @@ namespace WebAPI2
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthentication();
+            
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

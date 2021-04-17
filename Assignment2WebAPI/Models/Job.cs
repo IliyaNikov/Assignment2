@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebAPI2.Models
+namespace Assignment2WebAPI.Models
 {
     public class Job
     {
