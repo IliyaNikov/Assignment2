@@ -35,11 +35,6 @@ namespace Assignment2WebAPI.Data
             return tmp;
         }
 
-        /*public async Task<Adult> GetAdultByIdAsync(int Id)
-        {
-            
-        }*/
-
         public async Task<Adult> AddAdultAsync(Adult adult)
         {
             int max = adults.Max(adult => adult.Id);
