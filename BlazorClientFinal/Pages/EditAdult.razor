@@ -17,16 +17,14 @@
         <div class="form-group"> Sex:<br/> <InputText @bind-Value="adultToEdit.Sex"/></div>
         <div class="form-group"> Hair Color:<br/> <InputText @bind-Value="adultToEdit.HairColor"/></div>
         <div class="form-group"> Eye Color:<br/> <InputText @bind-Value="adultToEdit.EyeColor"/></div>
-        <div class="form-group"> Job title:<br/> <InputText @bind-Value="editJob.JobTitle"/></div>
-        <div class="form-group"> Salary:<br/> <InputNumber @bind-Value="editJob.Salary"/></div>
-        <p class="actions">
+        <div class="form-group"> Job title:<br/> <InputText @bind-Value="adultToEdit.JobTitle"/></div>
+    <p class="actions">
             <button class="btn btn-outline-dark" type="submit">Edit</button>
         </p>
 </EditForm>
 
 @code {
     private Adult adultToEdit;
-    private Job editJob = new Job();
     [Parameter]
     public int Id { get; set; }
 
@@ -38,12 +36,6 @@
 
     private void Edit()
     {
-        adultToEdit.JobTitle = new Job()
-        {
-            JobTitle = editJob.JobTitle,
-            Salary = editJob.Salary
-        };
-        
         AdultData.EditAdultAsync(adultToEdit);
         NavigationManager.NavigateTo("/AdultList");
     }

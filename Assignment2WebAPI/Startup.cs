@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Assignment2WebAPI.Data;
+using Assignment2WebAPI.Persistance;
 
 namespace Assignment2WebAPI
 {
@@ -32,8 +33,9 @@ namespace Assignment2WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment2WebAPI", Version = "v1"});
             });
-            services.AddSingleton<IAdultData, AdultData>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddDbContext<AdultContext>();
+            services.AddScoped<IAdultData, SQLiteAdultService>();
+            services.AddScoped<IUserService, SQLiteUserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

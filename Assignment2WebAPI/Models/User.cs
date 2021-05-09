@@ -1,9 +1,17 @@
-﻿namespace Assignment2WebAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
+namespace Assignment2WebAPI.Models
 {
     public class User
     {
-        public string username { get; set; }
-        public string password { get; set; }
+        [JsonPropertyName("UserName"), Key]
+        public string UserName { get; set; }
+        
+        [JsonPropertyName("Password")]
+        public string Password { get; set; }
+        
+        [JsonPropertyName("SecurityLevel")]
         public string SecurityLevel { get; set; }
     }
 }

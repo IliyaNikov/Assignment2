@@ -115,11 +115,7 @@ using Models;
 
     private void AddNewAdult()
     {
-        newAdultItem.JobTitle = new Job()
-        {
-            JobTitle = jobTitle,
-            Salary = salary
-        };
+        newAdultItem.JobTitle = jobTitle;
         
         AdultData.AddAdultAsync(newAdultItem);
         NavigationManager.NavigateTo("/AdultList");

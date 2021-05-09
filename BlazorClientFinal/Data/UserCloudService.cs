@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -18,16 +19,15 @@ namespace BlazorClientFinal.Data
         
         public async Task<User> ValidateUserAsync(string username, string password)
         {
-            string message = await client.GetStringAsync(uri + "/user?username" + username);
-
-            User result = JsonSerializer.Deserialize<User>(message);
-
-            if (!result.password.Equals(password))
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync($"https://localhost:5003/users?username={username}&password={password}");
+            if (response.StatusCode == HttpStatusCode.OK)
             {
-                throw new Exception("Incorrect password");
-            }
-
-            return result;
+                string userAsJson = await response.Content.ReadAsStringAsync();
+                User resultUser = JsonSerializer.Deserialize<User>(userAsJson);
+                return resultUser;
+            } 
+            throw new Exception("User not found");
         }
     }
 }

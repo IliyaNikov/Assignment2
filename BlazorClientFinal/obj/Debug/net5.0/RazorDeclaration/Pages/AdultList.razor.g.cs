@@ -98,7 +98,7 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\AdultList.razor"
+#line 75 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\AdultList.razor"
        
     private IList<Adult> allAdults;
     private IList<Adult> adultsToShow;

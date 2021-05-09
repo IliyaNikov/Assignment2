@@ -105,10 +105,9 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\EditAdult.razor"
+#line 26 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\EditAdult.razor"
        
     private Adult adultToEdit;
-    private Job editJob = new Job();
     [Parameter]
     public int Id { get; set; }
 
@@ -120,12 +119,6 @@ using Models;
 
     private void Edit()
     {
-        adultToEdit.JobTitle = new Job()
-        {
-            JobTitle = editJob.JobTitle,
-            Salary = editJob.Salary
-        };
-        
         AdultData.EditAdultAsync(adultToEdit);
         NavigationManager.NavigateTo("/AdultList");
     }
