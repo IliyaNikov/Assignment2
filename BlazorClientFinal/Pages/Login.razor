@@ -14,6 +14,7 @@
             <label>Password:</label> <input type="password" placeholder="password" @bind-value="password"/>
         </div>
         <div style="color:red">@errorMessage</div> <a href="" @onclick="PerformLogin"> Login </a>
+        
     </NotAuthorized>
     <Authorized>
         <a href="" @onclick="PerformLogout"> Log out </a>
@@ -56,5 +57,10 @@
             errorMessage = e.Message;
         }
     }
+
+   /* public async Task PerformRegister()
+    {
+        await 
+    } */
 
 }

@@ -7,8 +7,8 @@
 @inject NavigationManager NavigationManager
 
 <h3>Add adult</h3>
-<AuthorizeView Policy="SecurityLevel" Context="Form">
-<EditForm Model="@newAdultItem"OnValidSubmit="@AddNewAdult">
+
+<EditForm Model="@newAdultItem"OnValidSubmit="@AddNewAdult" Context="Form">
     <DataAnnotationsValidator/> 
     <ValidationSummary/>
     <div class="form-group"> First Name:<br/> <InputText @bind-Value="newAdultItem.FirstName"/> </div>
@@ -25,7 +25,6 @@
     </p>
     
 </EditForm>
-</AuthorizeView>
 
 @code {
     private Adult newAdultItem = new Adult();

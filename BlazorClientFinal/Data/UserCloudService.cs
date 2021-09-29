@@ -17,14 +17,18 @@ namespace BlazorClientFinal.Data
             client = new HttpClient();
         }
         
-        public async Task<User> ValidateUserAsync(string username, string password)
+        public async Task<User> ValidateUserAsync(string username, string passwordExpected)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync($"https://localhost:5003/users?username={username}&password={password}");
+            HttpResponseMessage response = await client.GetAsync(uri + "/users?username=" + username);
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string userAsJson = await response.Content.ReadAsStringAsync();
                 User resultUser = JsonSerializer.Deserialize<User>(userAsJson);
+                if (!resultUser.password.Equals(passwordExpected))
+                {
+                    throw new Exception("Incorrect password");
+                }
                 return resultUser;
             } 
             throw new Exception("User not found");

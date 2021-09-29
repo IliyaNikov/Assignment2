@@ -98,7 +98,7 @@ using BlazorClientFinal.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\Login.razor"
+#line 24 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\Login.razor"
        
     private string username;
     private string password;
@@ -135,6 +135,11 @@ using BlazorClientFinal.Authorization;
             errorMessage = e.Message;
         }
     }
+
+   /* public async Task PerformRegister()
+    {
+        await 
+    } */
 
 
 #line default

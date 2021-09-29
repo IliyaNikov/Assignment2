@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Assignment2WebAPI.Models;
 using Assignment2WebAPI.Persistance;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -16,12 +17,13 @@ namespace Assignment2WebAPI.Data
         {
             this.adultContext = adultContext;
         }
-        
-        public async Task<IList<Adult>> GetAdultsAsync()
-        {
-            return await adultContext.adults.ToListAsync();
-        }
 
+        [HttpGet]
+
+            public async Task<IList<Adult>> GetAdultsAsync()
+        { return await adultContext.adults.ToListAsync(); }
+
+        [HttpPost]
         public async Task<Adult> AddAdultAsync(Adult adult)
         {
             EntityEntry<Adult> newlyAdded = await adultContext.adults.AddAsync(adult);
@@ -29,6 +31,7 @@ namespace Assignment2WebAPI.Data
             return newlyAdded.Entity;
         }
 
+        [HttpDelete]
         public async Task RemoveAdultAsync(int adultId)
         {
             Adult toDelete = await adultContext.adults.FirstOrDefaultAsync(t => t.Id == adultId);

@@ -105,7 +105,7 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\AddAdult.razor"
+#line 29 "C:\Users\iliya\RiderProjects\Assignment 2\BlazorClientFinal\Pages\AddAdult.razor"
        
     private Adult newAdultItem = new Adult();
 

@@ -15,9 +15,8 @@ namespace Assignment2WebAPI.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Adult>().HasKey(sc => new {sc.Id});
+            modelBuilder.Entity<User>().HasKey(sc => new { sc.UserName});
         }
     }
 }

@@ -21,8 +21,27 @@ namespace Assignment2WebAPI
                 {
                     await SeedAdult(adultContext);
                 }
+
+                if (!adultContext.users.Any())
+                {
+                    await SeedUser(adultContext);
+                }
             }
             CreateHostBuilder(args).Build().Run();
+        }
+
+        private static async Task SeedUser(AdultContext adultContext)
+        {
+            User user1 = new User
+            {
+                UserName = "Troels",
+                Password = "12345",
+                SecurityLevel = "1"
+
+            };
+
+            await adultContext.users.AddAsync(user1);
+            await adultContext.SaveChangesAsync();
         }
 
         private static async Task SeedAdult(AdultContext adultContext)

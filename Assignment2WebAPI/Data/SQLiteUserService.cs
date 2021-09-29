@@ -14,7 +14,7 @@ namespace Assignment2WebAPI.Data
         {
             this.adultContext = adultContext;
         }
-        public async Task<User> ValidateUserAsync(string username, string password)
+        public async Task<User> ValidateUserAsync(string username)
         {
             User first = await adultContext.users.FirstOrDefaultAsync(user => user.UserName.Equals(username));
             if (first == null)

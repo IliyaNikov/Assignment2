@@ -22,7 +22,7 @@ namespace Assignment2WebAPI.Controllers
         {
             try
             {
-                User user = await userService.ValidateUserAsync(username, password);
+                User user = await userService.ValidateUserAsync(username);
                 return Ok(user);
             }
             catch (Exception e)

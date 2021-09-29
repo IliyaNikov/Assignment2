@@ -1,4 +1,3 @@
-C:\Users\iliya\RiderProjects\Assignment 2\Assignment2WebAPI\bin\Debug\net5.0\adults.json
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment2WebAPI\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment2WebAPI\bin\Debug\net5.0\appsettings.json
 C:\Users\iliya\RiderProjects\Assignment 2\Assignment2WebAPI\bin\Debug\net5.0\Assignment2WebAPI.exe
