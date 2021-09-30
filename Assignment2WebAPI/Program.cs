@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Assignment2WebAPI.Models;
 using Assignment2WebAPI.Persistance;
@@ -32,15 +33,30 @@ namespace Assignment2WebAPI
 
         private static async Task SeedUser(AdultContext adultContext)
         {
-            User user1 = new User
+            IList<User> users = new[]
             {
-                UserName = "Troels",
-                Password = "12345",
-                SecurityLevel = "1"
+                new User
+                {
+                    UserName = "Troels",
+                    Password = "12345",
+                    SecurityLevel = "1"
 
-            };
+                },
+                new User
+                {
+                    UserName = "Ilia",
+                    Password = "12345678",
+                    SecurityLevel = "1"
 
-            await adultContext.users.AddAsync(user1);
+                },
+                new User
+                {
+                    UserName = "Fenris",
+                    Password = "12345",
+                    SecurityLevel = "1"
+                }
+            }.ToList();
+
             await adultContext.SaveChangesAsync();
         }
 

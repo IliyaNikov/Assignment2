@@ -9,29 +9,34 @@ namespace BlazorClientFinal.Data
 {
     public class UserCloudService : IUserService
     {
-        private string uri = "http://localhost:5003";
-        private readonly HttpClient client;
 
-        public UserCloudService()
-        {
-            client = new HttpClient();
-        }
-        
-        public async Task<User> ValidateUserAsync(string username, string passwordExpected)
+        public async Task<User> ValidateUserAsync(string username, string password)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(uri + "/users?username=" + username);
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
+            HttpResponseMessage response = await client.GetAsync($"http://localhost:5003/User?username={username}&password={password}");
+
+            if(response.StatusCode == HttpStatusCode.OK)
+            { 
                 string userAsJson = await response.Content.ReadAsStringAsync();
-                User resultUser = JsonSerializer.Deserialize<User>(userAsJson);
-                if (!resultUser.password.Equals(passwordExpected))
-                {
-                    throw new Exception("Incorrect password");
-                }
-                return resultUser;
-            } 
-            throw new Exception("User not found");
+                Console.WriteLine("Dies here no?");
+                User result = JsonSerializer.Deserialize<User>(userAsJson);
+                return result;
+            }
+                
+            throw new Exception("User not found"); 
+           
+           
+           /* Hardcoded user. It works! 
+           User tryout = new User();
+           tryout.password = "12345";
+           tryout.username = "Troels";
+           tryout.SecurityLevel = "1";
+           if (username == tryout.username && passwordExpected == tryout.password)
+           {
+               return tryout;
+           }
+           throw new Exception("The login name or password is not correct");
+           */
         }
     }
 }

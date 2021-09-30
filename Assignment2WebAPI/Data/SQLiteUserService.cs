@@ -14,15 +14,17 @@ namespace Assignment2WebAPI.Data
         {
             this.adultContext = adultContext;
         }
-        public async Task<User> ValidateUserAsync(string username)
+        public async Task<User> ValidateUserAsync(string username, string password)
         {
-            User first = await adultContext.users.FirstOrDefaultAsync(user => user.UserName.Equals(username));
-            if (first == null)
+            Console.WriteLine("reached the user service");
+            User first = await adultContext.users.FirstOrDefaultAsync(user => user.UserName.Equals(username) && user.Password.Equals(password));
+            Console.WriteLine("database checked");
+            if (first != null)
             {
-                throw new Exception("User not found");
+                return first;
             }
 
-            return first;
+            throw new Exception("User not found");
         }
     }
 }

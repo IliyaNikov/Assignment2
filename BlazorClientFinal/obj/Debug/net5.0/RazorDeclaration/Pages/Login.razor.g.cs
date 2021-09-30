@@ -128,7 +128,7 @@ using BlazorClientFinal.Authorization;
         try
         {
             await ((CustomAuthentication) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/Host");
+            NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {

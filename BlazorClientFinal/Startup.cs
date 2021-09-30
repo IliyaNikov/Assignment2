@@ -33,6 +33,14 @@ namespace BlazorClientFinal
             services.AddSingleton<IAdultData, AdultCloudService>();
             services.AddScoped<IUserService, UserCloudService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthentication>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("SecurityLevel", a =>
+                {
+                    a.RequireAuthenticatedUser().RequireClaim("Level", "1");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

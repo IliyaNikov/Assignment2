@@ -5,7 +5,7 @@ namespace Assignment2WebAPI.Data
 {
     public interface IUserService
     {
-        Task<User> ValidateUserAsync(string username);
+        Task<User> ValidateUserAsync(string username, string password);
        
     }
 }
